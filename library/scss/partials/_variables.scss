@@ -1,0 +1,75 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #323944;
+$white:             #fff;
+
+$light-gray:        #f8f9fa;
+$gray:              #eaedf2;
+$text-color:        #5c6b80;
+$meta-gray:         #9fa6b4;
+
+$tan:               #eceee5;
+
+$green:             #7dd667;
+
+$bones-pink:        #f01d4f;
+$blue:              #2980b9;
+
+$link-color:        $bones-pink;
+$link-hover:        darken($link-color, 9%);
+
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf;
+
+
+
+
+/* Site colors */
+$site-orange:       #FD8600;
+$site-orange-dark: darken(#FD8600, 9%);
+$site-orange-light: lighten(#FD8600, 9%);
+$site-gray-background: #f8f6f6;
+
+
+/* Site items */
+$body-background:   $site-gray-background;
+$link-color:        $site-orange;
+$link-hover:        $site-orange-dark;
+$button-color-background:      $site-orange;
+$button-color-background-hover:$site-orange-light;
+$button-color-text: $white;
+$button-color-text-hover: $white;
+
+$box-background: 	$site-gray-background;
+$color-text: 		$text-color;
+$color-title: 		$text-color;
+$color-navigation: 	$link-color;
+$color-navigation-hover: 		$link-hover;
+$color-navigation-current: 		$color-navigation;
+$color-link:        $link-color;
+$color-link-hover: 	$link-hover;
+$color-border: 		$border-color;
+
+$contact-form-error-color: $site-orange;
