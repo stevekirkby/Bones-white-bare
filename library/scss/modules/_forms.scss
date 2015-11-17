@@ -40,9 +40,9 @@ textarea,
 .field {
   display: block;
   height: 40px;
-  line-height: 40px;
-  padding: 0 12px;
-  margin-bottom: 14px;
+  line-height: 1em;
+  padding: 0 12px; // BETTER PADDING 
+  margin-bottom: 0; // CHANGE MARGIN
   font-size: 1em;
   color: $text-color;
   border-radius: 3px;
@@ -50,10 +50,11 @@ textarea,
   box-shadow: none;
   border: 0;
   width: 100%;
-  max-width: 400px;
+  // max-width: 400px; //REMOVE HERE
   font-family: $lato;
   background-color: $gray;
   @include transition(background-color 0.24s ease-in-out);
+
 
   // a focused input (or hovered on)
   &:focus,
@@ -122,4 +123,39 @@ select {
   background-position: 97.5% center;
 }
 
+// Style the placeholder text and have it disappear when in focus
+
+::-webkit-input-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: black;
+  font-size: 0.9em;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: black;
+  font-size: 0.9em;
+}
+
+:-ms-input-placeholder {  
+  color: black;
+  font-size: 0.9em;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  color: white;
+}
+
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {  /* Firefox 19+ */
+  color: white;
+}
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {  
+  color: white;
+}
 

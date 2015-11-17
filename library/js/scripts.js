@@ -101,6 +101,11 @@ function loadGravatars() {
 	}
 } // end function
 
+function navMenu() {
+  jQuery('.nav-button').click(function() {      
+      jQuery('.top-nav').slideToggle();
+  })
+}
 
 /*
  * Put all your regular jQuery in here.
@@ -111,7 +116,8 @@ jQuery(document).ready(function($) {
    * Let's fire off the gravatar function
    * You can remove this if you don't need it
   */
-  loadGravatars();
+  // loadGravatars();
+  navMenu ();
 
 
 }); /* end of as page load scripts */

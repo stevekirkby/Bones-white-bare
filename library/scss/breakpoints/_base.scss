@@ -19,10 +19,20 @@ body {
 	font-family: $lato;
 	font-size: 100%;
 	line-height: 1.5;
-	color: $text-color;
-	background-color: $gray;
+	color: $color-text;
+	background-color: $body-background;
   -webkit-font-smoothing: antialiased;
 }
+
+// IE 7 AND BELOW WARNING
+.ltie8-warning {
+	display:none;	
+}
+
+.lt-ie8 .ltie8-warning {
+	display:block;
+}
+
 
 /********************
 WORDPRESS BODY CLASSES
@@ -70,8 +80,12 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 100%;
 	margin: 0 auto;
+}
+
+.inner-wrap {
+	padding: 5px 15px; // Use pixels. using ems causes different sized fonts to indent differently
 }
 
 /*********************
@@ -79,26 +93,29 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+	color: $color-link;
 
 	/* on hover */
 	&:hover, &:focus {
-		color: $link-hover;
+		color: $color-link-hover;
 	}
 
 	/* on click */
 	&:active {
 
 	}
-
-	/* mobile tap color */
 	&:link {
-		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	/*
+	this highlights links on iPhones/iPads.
+	so it basically works like the :hover selector
+	for mobile devices.
+	*/
+	-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+	/* Mobile styling of links */
+	&[href^="tel"] {
+	    color:inherit;
+	    text-decoration:none;
 	}
 }
 
@@ -106,13 +123,15 @@ a, a:visited {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
+// Apply only bottom margin to headings - use inner-wrap if necessary
+// Set line heights to be consistent
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
+	line-height: 1.4em;
+	color: $color-title;
+	margin: 0 0 0.375em 0;
+	
 
 	/* removing text decoration from all headline links */
 	a {
@@ -122,27 +141,24 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 h1, .h1 {
 	font-size: 2.5em;
-	line-height: 1.333em;
 }
 
 h2, .h2 {
 	font-size: 1.75em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
+	
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	font-size: 1.45em;
 }
 
 h4, .h4 {
 	font-size: 1.1em;
-	font-weight: 700;
+	
 }
 
 h5, .h5 {
 	font-size: 0.846em;
-	line-height: 2.09em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
@@ -152,14 +168,32 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background-color: $header-background;
+}
+
+#inner-header {
+	position:relative;
+	.nav-button {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 90px;
+		height: 64px;
+		padding: 0.8em 0.75em;
+		font-size: 1.3em;
+		color: $color-text;
+		&:focus, &:active {
+			background-color: $box-background;
+			color: lighten(black, 5%);
+		}
+	}
 }
 
 	#logo {
-		margin: 0.75em 0;
-
+		margin: 0;
+		padding-right: 100px;
 		a {
-			color: $white;
+			color: $color-text;
 		}
 	}
 
@@ -175,6 +209,11 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
+
+
+.top-nav {
+	display:none; // slideDown menu enabled for mobile
+}
 .nav {
 	border-bottom: 0;
 	margin: 0;
@@ -183,7 +222,7 @@ and more scalable.
 
 		a {
 			display: block;
-			color: $white;
+			color: $color-navigation; // HERE
 			text-decoration: none;
 			padding: 0.75em;
 
@@ -194,7 +233,7 @@ and more scalable.
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
-
+				color: $color-navigation-hover;  // HERE
 			}
 		}
 
@@ -239,7 +278,9 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a {}
+		a {
+			color:$color-navigation-current;
+		}
 
 	}  /* end current highlighters */
 
@@ -251,23 +292,23 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 1.5em;
+	margin-top: 0;
 }
 
 		.hentry {
-			background-color: $white;
+			background-color: $color-content-background;
 			border-radius: 3px;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
+			border: 0;
 
 			header {
-				border-bottom: 1px solid $light-gray;
-				padding: 1.5em;
+				border-bottom: 0;
+				// padding: 1.5em;
 			}
 
 			footer {
-				padding: 1.5em;
-				border-top: 1px solid $light-gray;
+				// padding: 1.5em;
+				border-top: 0;
 
 				p {
 					margin: 0;
@@ -311,7 +352,7 @@ POSTS & CONTENT STYLES
 
 		/* entry content */
 		.entry-content {
-			padding: 1.5em 1.5em 0;
+			padding: 1.5em 0 0;
 
 			p {
 				margin: 0 0 1.5em;
@@ -402,9 +443,10 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				margin: 0 0 1.5em 0;
+				margin: 0;
 				max-width: 100%;
 				height: auto;
+				vertical-align: middle; // add this to remove the line-height issue below all images
 			}
 
 			/*
@@ -861,8 +903,8 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	background-color: $footer-background;
+	color: $footer-text;
 }
 
 	/*

@@ -52,9 +52,14 @@ $site-orange-dark: darken(#FD8600, 9%);
 $site-orange-light: lighten(#FD8600, 9%);
 $site-gray-background: #f8f6f6;
 
+$color-text: 		$text-color;
 
 /* Site items */
-$body-background:   $site-gray-background;
+$body-background:   $white;
+$header-background: $white;
+$footer-background: $white;
+$footer-text: 		$color-text;
+
 $link-color:        $site-orange;
 $link-hover:        $site-orange-dark;
 $button-color-background:      $site-orange;
@@ -63,7 +68,7 @@ $button-color-text: $white;
 $button-color-text-hover: $white;
 
 $box-background: 	$site-gray-background;
-$color-text: 		$text-color;
+$color-content-background: $white;
 $color-title: 		$text-color;
 $color-navigation: 	$link-color;
 $color-navigation-hover: 		$link-hover;
