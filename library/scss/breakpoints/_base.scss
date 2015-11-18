@@ -189,13 +189,18 @@ HEADER STYLES
 	}
 }
 
-	#logo {
-		margin: 0;
-		padding-right: 100px;
-		a {
-			color: $color-text;
-		}
+#logo {
+	margin: 0;
+	padding-right: 100px;
+	img {
+		width: 100%;
+		height: 100%;
+		max-width: 200px;
 	}
+	a {
+		color: $color-text;
+	}
+}
 
 /*********************
 NAVIGATION STYLES
