@@ -53,6 +53,10 @@ NAVIGATION STYLES
 }
 .nav {
 	border: 0;
+	position: absolute;
+	right: 20px;
+	bottom: 0;
+	
 	ul {
 		background:$white;
 		margin-top:0;
@@ -63,6 +67,9 @@ NAVIGATION STYLES
 
 		a {
 			border-bottom: 0;
+			padding-bottom: 22px;
+			padding-top: 5px;
+			font-size: 0.85em;
 
 			/*
 			you can use hover styles here even though this size
@@ -128,7 +135,9 @@ NAVIGATION STYLES
 			li.current-menu-item,
 			li.current_page_item,
 			li.current_page_ancestor {
-				a {}
+				a {
+					
+				}
 			}
 		}
 
