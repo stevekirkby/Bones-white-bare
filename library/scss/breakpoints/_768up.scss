@@ -32,15 +32,17 @@ HEADER STYLES
 *********************/
 
 .header {}
-
+	
 	#logo {
 		padding-right: 0;
-		text-align:center;
 	}
 
 
 #inner-header .nav-button {
 	display:none;
+}
+#inner-header {
+	margin-top: 28px;
 }
 
 /*********************
