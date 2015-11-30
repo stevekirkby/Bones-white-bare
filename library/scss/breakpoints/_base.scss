@@ -169,17 +169,22 @@ HEADER STYLES
 
 .header {
 	background-color: $header-background;
+	position: fixed;
+	top: 0px;
+	width: 100%;
 }
 
 #inner-header {
 	position:relative;
+	height: 48px;
+	margin-top: 10px;
 	.nav-button {
 		position: absolute;
 		right: 0;
 		top: 0;
 		width: 90px;
-		height: 64px;
-		padding: 0.8em 0.75em;
+		height: 48px;
+		padding: 0 0.75em;
 		font-size: 1.3em;
 		color: $color-text;
 		&:focus, &:active {
