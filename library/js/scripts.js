@@ -103,9 +103,38 @@ function loadGravatars() {
 
 function navMenu() {
   jQuery('.nav-button').click(function() {      
-      jQuery('.top-nav').slideToggle();
+      jQuery('.top-nav').slideToggle(100);
   })
 }
+
+function shrink_header() {
+  jQuery('#inner-header').data('size','big');
+  jQuery(window).scroll(function(){
+  if(jQuery(document).scrollTop() > 0)
+  {
+      if(jQuery('#inner-header').data('size') == 'big')
+      {
+          jQuery('#inner-header').data('size','small');
+          jQuery('#inner-header').stop().animate({
+              marginTop:'10px'
+          },600);
+      }
+  }
+  else
+    {
+      if(jQuery('#inner-header').data('size') == 'small')
+        {
+          jQuery('#inner-header').data('size','big');
+          jQuery('#inner-header').stop().animate({
+              marginTop:'28px'
+          },600);
+        }  
+    }
+  });
+}
+
+
+
 
 /*
  * Put all your regular jQuery in here.
@@ -117,6 +146,7 @@ jQuery(document).ready(function($) {
    * You can remove this if you don't need it
   */
   // loadGravatars();
+  shrink_header();
   navMenu ();
 
 
