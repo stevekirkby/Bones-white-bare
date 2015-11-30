@@ -235,6 +235,11 @@ and more scalable.
 			color: $color-navigation; // HERE
 			text-decoration: none;
 			padding: 0.75em;
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: 1em;
+			letter-spacing: 1.5px;
+			background-color: rgba(255,255,255,0.9);
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -243,7 +248,9 @@ and more scalable.
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
-				color: $color-navigation-hover;  // HERE
+				color: $color-navigation-hover;  
+				background-color: $color-navigation-hover-background;
+
 			}
 		}
 
@@ -289,12 +296,13 @@ and more scalable.
 	li.current_page_ancestor {
 
 		a {
-			color:$color-navigation-current;
+			background-color: $color-navigation-current-background;
 		}
 
 	}  /* end current highlighters */
 
 } /* end .nav */
+
 
 
 /*********************
